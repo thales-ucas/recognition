@@ -165,6 +165,27 @@ print(result)
 [{'img': './predictions\\1.jpg', 'label': '耳麦'}, {'img': './predictions\\2.jpg', 'label': '玩偶'}, {'img': './predictions\\3.jpg', 'label': '玩偶'}]
 ```
 
+
+比如我们用图表显示一下result
+
+
+```py
+import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+fig, axes = plt.subplots(1, len(result), figsize=(9, 5))
+for idx, obj in enumerate(result):
+  img = plt.imread(obj['img'])
+  axes[idx].imshow(img)
+  axes[idx].set_title(obj['label'])
+plt.show()
+```
+
+
+![识别](./docs/assets/result.png)
+
+
 # recoginzer类
 
 
