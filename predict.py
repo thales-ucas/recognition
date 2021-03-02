@@ -1,5 +1,5 @@
 from recognition import Recognizer
 
 recognizer = Recognizer('./recognition.json')
-recognizer.train()
+recognizer.load()
 recognizer.predict('./predictions/')

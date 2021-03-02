@@ -1,0 +1,14 @@
+
+{
+  "model": "recognition.h5",
+  "train": [
+    {
+      "label": "玩偶",
+      "path": "./images/doll"
+    },
+    {
+      "label": "耳麦",
+      "path": "./images/headset"
+    }
+  ]
+}
