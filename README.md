@@ -103,7 +103,7 @@ recognizer.predict('./predictions/')
 ```
 
 
-输出结果为
+看看结果
 
 
 ```
@@ -150,7 +150,16 @@ from recognition import Recognizer
 
 recognizer = Recognizer('./recognition.json')
 recognizer.load()
-recognizer.predict('./predictions/')
+result = recognizer.predict('./predictions/')
+print(result)
+```
+
+
+我专门用json输出，方便其他接口调用
+
+
+```json
+[{'img': './predictions\\1.jpg', 'label': '耳麦'}, {'img': './predictions\\2.jpg', 'label': '玩偶'}, {'img': './predictions\\3.jpg', 'label': '玩偶'}]
 ```
 
 # recoginzer类

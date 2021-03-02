@@ -97,8 +97,14 @@ class Recognizer:
       data.append(img)
     data = np.asarray(data, np.float32)
     prediction = self.model.predict_classes(data)
+    arr = []
     for i in range(np.size(prediction)):
-      print("图片 (%s) 是 (%s)" % (imgs[i], self.conf["train"][prediction[i]]['label']))
+      obj = {
+        "img": imgs[i],
+        "label": self.conf["train"][prediction[i]]['label']
+      }
+      arr.append(obj)
+    return arr
   def loadImagesByPath(self, folder):
     '''
     读取路径下所有图片
